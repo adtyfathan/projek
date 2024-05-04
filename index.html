@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Pie Chart</title>
+</head>
+
+<body>
+  <h1>PIE CHART</h1>
+  <form onsubmit="event.preventDefault(); showPieChart()">
+    <div class="input-wrapper">
+      <div class="input-container">
+        <label for="data-1">Masukkan data ke-1</label>
+        <div class="input-child">
+          <input type="text" id="nama-1" class="text" name="nama-1" placeholder="nama-1" autofocus required>
+          <input type="number" id="data-1" class="number" name="data-1" placeholder="data-1" autofocus required />
+          <input type="color" id="color-1" class="color" />
+        </div>
+      </div>
+    </div>
+    <button type="button" onclick="addInput()" class="input-button">Add Input</button>
+    <button type="submit" class="submit-button">Proses</button>
+  </form>
+
+  <div class="result">
+    <div class="pie-chart-container">
+      <canvas id="pie-chart" class="animate-pie-chart" width="600" height="600"></canvas>
+      <ul id="pie-chart-legend"></ul>
+      <button onclick="downloadChart()">Download</button>
+    </div>
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>
