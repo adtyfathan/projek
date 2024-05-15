@@ -1,5 +1,6 @@
 let data = 1;
 const inputWrapper = document.querySelector(".input-wrapper");
+const chartContainer = document.querySelector(".pie-chart-container");
 const canvas = document.getElementById("pie-chart");
 const ctx = canvas.getContext("2d");
 const legend = document.getElementById("pie-chart-legend");
@@ -12,7 +13,7 @@ function addInput() {
       <label>Masukkan data ke-${data}</label>
       <div class="input-child">
         <input type="text" id="nama-${data}" class="text" placeholder="nama-${data}" autofocus required>
-        <input type="number" id="data-${data}" class="number" placeholder="data-${data}" autofocus required>
+        <input type="number" id="data-${data}" class="number" placeholder="data-${data}" min="0" autofocus required>
         <input type="color" id="color-${data}" class="color"/>
       </div>
   `;
@@ -21,8 +22,8 @@ function addInput() {
 
 function downloadChart() {
   const downloadLink = document.createElement("a");
-  downloadLink.href = canvas.toDataURL("image/png"); // Convert canvas to PNG image
-  downloadLink.download = "pie_chart.png"; // Set the filename with .png extension
+  downloadLink.href = canvas.toDataURL("image/png");
+  downloadLink.download = "pie_chart.png";
   document.body.appendChild(downloadLink);
   downloadLink.click();
   document.body.removeChild(downloadLink);
@@ -65,12 +66,18 @@ function showPieChart(event) {
     newLegend.classList.add('legend-item');
     newLegend.innerHTML = `
       <div class="legend-color" style="background-color:${values[index].color}"></div>
-      <div class="legend-label">${values[index].name}: ${values[index].size} - ${(
-        (values[index].size / total) *
-        100
-      ).toFixed(2)} %
+      <div class="legend-label">
+        <h1>
+          ${((values[index].size / total) * 100).toFixed(2)}% - ${values[index].name}
+        </h1>
       </div>
       `;
     legend.appendChild(newLegend);
   });
+
+  const downloadImg = document.createElement("img");
+  downloadImg.src = "./asset/download.png";
+  downloadImg.classList.add("download-button");
+  downloadImg.onclick = () => downloadChart();
+  chartContainer.appendChild(downloadImg);
 }

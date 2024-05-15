@@ -82,34 +82,45 @@ input {
 
 .result {
   display: flex;
-  font-weight: 700;
-  font-size: 1.5rem;
-  background-color: #fff;
   padding: 0.3rem 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  position: relative;
 }
 
 .pie-chart-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin: 2rem;
   gap: 20px;
 }
 
+.download-button {
+  position: absolute;
+  width: 24px;
+  top: 50px;
+  left: 40px;
+  cursor: pointer;
+}
+
 .legend-color {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  width: 12px;
+  height: 12px;
   display: inline-block;
-  margin-right: 10px;
+  margin: auto 10px;
+  border: 1px solid black;
 }
 
 .legend-item {
   display: flex;
   margin-top: 20px;
+}
+
+.legend-label h1 {
+  font-size: 12px;
+  font-weight: 700;
 }
 
 /* .animate-pie-chart {

@@ -17,7 +17,7 @@
         <label>Masukkan data ke-1</label>
         <div class="input-child">
           <input type="text" id="nama-1" class="text" placeholder="nama-1" autofocus required>
-          <input type="number" id="data-1" class="number" placeholder="data-1" autofocus required />
+          <input type="number" id="data-1" class="number" placeholder="data-1" min="0" autofocus required />
           <input type="color" id="color-1" class="color" />
         </div>
       </div>
@@ -30,7 +30,6 @@
     <div class="pie-chart-container">
       <canvas id="pie-chart" width="500" height="500"></canvas>
       <ul id="pie-chart-legend"></ul>
-      <button onclick="downloadChart()">Download</button>
     </div>
   </div>
   <script src="main.js"></script>
