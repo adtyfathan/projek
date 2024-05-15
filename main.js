@@ -9,10 +9,10 @@ function addInput() {
   const newInputContainer = document.createElement('div');
   newInputContainer.classList.add('input-container');
   newInputContainer.innerHTML = `
-      <label for="data-${data}">Masukkan data ke-${data}</label>
+      <label>Masukkan data ke-${data}</label>
       <div class="input-child">
-        <input type="text" id="nama-${data}" class="text" name="nama-${data}" placeholder="nama-${data}" autofocus required>
-        <input type="number" id="data-${data}" class="number" name="data-${data}" placeholder="data-${data}" autofocus required>
+        <input type="text" id="nama-${data}" class="text" placeholder="nama-${data}" autofocus required>
+        <input type="number" id="data-${data}" class="number" placeholder="data-${data}" autofocus required>
         <input type="color" id="color-${data}" class="color"/>
       </div>
   `;
@@ -28,7 +28,8 @@ function downloadChart() {
   document.body.removeChild(downloadLink);
 }
 
-function showPieChart() {
+function showPieChart(event) {
+  event.preventDefault()
   let values = [];
   let total = 0;
   legend.innerHTML = "";
