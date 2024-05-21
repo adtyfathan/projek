@@ -9,6 +9,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: start;
   padding: 40px;
   gap: 40px;
 }
@@ -80,6 +81,10 @@ input {
   box-shadow: 3px 3px 0.8px rgba(0, 0, 0, 0.6);
 }
 
+.submit-button:hover {
+  background-color: rgb(255, 85, 198);
+}
+
 .result {
   display: flex;
   padding: 0.3rem 1rem;
@@ -122,19 +127,3 @@ input {
   font-size: 12px;
   font-weight: 700;
 }
-
-/* .animate-pie-chart {
-  animation: animate-pie-chart 1s ease-in-out;
-}
-
-@keyframes animate-pie-chart {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-} */
